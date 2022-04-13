@@ -28,6 +28,22 @@ def Calcul():
     ax.plot_surface(xx,yy,f)
     pp.show()
 
+def ex1_td1(): 
+    for i in [A_e11,A_e12,A_e22,B_e1,B_e2,C_e1] :
+        i.delete(0,tk.END) ; 
+    A_e11.insert(0,A_4[0,0]) ; A_e12.insert(0,A_1[0,1]) ;A_e22.insert(0,A_1[1,1]);B_e1.insert(0,B_1[0]);B_e2.insert(0,B_1[1]); C_e1.insert(0,C_1[0,0])
+def ex2_td1(): 
+    for i in [A_e11,A_e12,A_e22,B_e1,B_e2,C_e1] :
+        i.delete(0,tk.END) ; 
+    A_e11.insert(0,A_2[0,0]) ; A_e12.insert(0,A_2[0,1]) ;A_e22.insert(0,A_2[1,1]);B_e1.insert(0,B_2[0]);B_e2.insert(0,B_2[1]); C_e1.insert(0,C_2[0,0])
+def ex3_td1(): 
+    for i in [A_e11,A_e12,A_e22,B_e1,B_e2,C_e1] :
+        i.delete(0,tk.END) ; 
+    A_e11.insert(0,A_3[0,0]) ; A_e12.insert(0,A_3[0,1]) ;A_e22.insert(0,A_3[1,1]);B_e1.insert(0,B_3[0]);B_e2.insert(0,B_3[1]); C_e1.insert(0,C_3[0,0])
+def ex4_td1(): 
+    for i in [A_e11,A_e12,A_e22,B_e1,B_e2,C_e1] :
+        i.delete(0,tk.END) ; 
+    A_e11.insert(0,A_4[0,0]) ; A_e12.insert(0,A_4[0,1]) ;A_e22.insert(0,A_4[1,1]);B_e1.insert(0,B_4[0]);B_e2.insert(0,B_4[1]); C_e1.insert(0,C_4[0,0])
 fen = tk.Tk()
 fen.geometry('500x500') 
 can1 = tk.Canvas(fen,width = 500,height = 500)
@@ -64,9 +80,23 @@ C_e1.place(x = 350, y = 100)
 # --------------
 # Button de calcul
 # --------------
+A_1 = np.array([[4,2],[2,2]]) ; B_1 = np.array([0 ,0]) ; C_1 = np.array([[-3]])
+A_2 = np.array([[2,np.sqrt(6)],[np.sqrt(6),2]]) ; B_2 = np.array([0 ,0]) ; C_2 = np.array([[0]])
+A_3 = np.array([[4,2],[2,1]]) ; B_3 = np.array([2 ,1]) ; C_3 = np.array([[2]])
+A_4 = np.array([[4,2],[2,1]]) ; B_4 = np.array([0 ,1]) ; C_4 = np.array([[0]])
+
 
 B1 = tk.Button(can1,text = "Calcul",command = Calcul)
 B1.place(x = 300, y = 250)
+
+B2 = tk.Button(can1, text = 'Ex1 TD1',command = ex1_td1)
+B2.place(x = 300,y = 280)
+B3 = tk.Button(can1, text = 'Ex2 TD1',command = ex2_td1)
+B3.place(x = 300,y = 310)
+B4 = tk.Button(can1, text = 'Ex3 TD1',command = ex3_td1)
+B4.place(x = 300,y = 340)
+B5 = tk.Button(can1, text = 'Ex4 TD1',command = ex4_td1)
+B5.place(x = 300,y = 370)
 
 
 fen.mainloop()
