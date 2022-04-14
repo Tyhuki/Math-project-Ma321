@@ -88,7 +88,6 @@ A_4 = np.array([[4,2],[2,1]]) ; B_4 = np.array([0 ,1]) ; C_4 = np.array([[0]])
 
 B1 = tk.Button(can1,text = "Calcul",command = Calcul)
 B1.place(x = 300, y = 250)
-
 B2 = tk.Button(can1, text = 'Ex1 TD1',command = ex1_td1)
 B2.place(x = 300,y = 280)
 B3 = tk.Button(can1, text = 'Ex2 TD1',command = ex2_td1)
@@ -100,7 +99,3 @@ B5.place(x = 300,y = 370)
 
 
 fen.mainloop()
-
-
-
-
